@@ -19,6 +19,19 @@ public class Flight {
         this.departureTime = departureTime;
     }
 
+    @Override
+    public String toString() {
+        return "Flight{" +
+                "id='" + id + '\'' +
+                ", flightId='" + flightId + '\'' +
+                ", planeType='" + planeType + '\'' +
+                ", totalSeatsNum=" + totalSeatsNum +
+                ", departureAirPort='" + departureAirPort + '\'' +
+                ", destinationAirPort='" + destinationAirPort + '\'' +
+                ", departureTime='" + departureTime + '\'' +
+                '}';
+    }
+
     public String getId() {
         return id;
     }

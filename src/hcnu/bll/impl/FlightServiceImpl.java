@@ -10,7 +10,7 @@ public class FlightServiceImpl implements IFlightService {
 
     @Override
     public void insertFlight(Flight flight) {
-
+        System.out.println(flight);
     }
 
     @Override
