@@ -2,12 +2,22 @@ package hcnu.bean;
 
 public class Flight {
     private String id;
+    private String flightId;
     private String planeType;
-    private String seatsNo;
-    private String totalSeatsNum;
+    private int totalSeatsNum;
     private String departureAirPort;
     private String destinationAirPort;
     private String departureTime;
+
+    public Flight(String id, String flightId, String planeType, int totalSeatsNum, String departureAirPort, String destinationAirPort, String departureTime) {
+        this.id = id;
+        this.flightId = flightId;
+        this.planeType = planeType;
+        this.totalSeatsNum = totalSeatsNum;
+        this.departureAirPort = departureAirPort;
+        this.destinationAirPort = destinationAirPort;
+        this.departureTime = departureTime;
+    }
 
     public String getId() {
         return id;
@@ -15,6 +25,14 @@ public class Flight {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getFlightId() {
+        return flightId;
+    }
+
+    public void setFlightId(String flightId) {
+        this.flightId = flightId;
     }
 
     public String getPlaneType() {
@@ -25,19 +43,11 @@ public class Flight {
         this.planeType = planeType;
     }
 
-    public String getSeatsNo() {
-        return seatsNo;
-    }
-
-    public void setSeatsNo(String seatsNo) {
-        this.seatsNo = seatsNo;
-    }
-
-    public String getTotalSeatsNum() {
+    public int getTotalSeatsNum() {
         return totalSeatsNum;
     }
 
-    public void setTotalSeatsNum(String totalSeatsNum) {
+    public void setTotalSeatsNum(int totalSeatsNum) {
         this.totalSeatsNum = totalSeatsNum;
     }
 

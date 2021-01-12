@@ -1,6 +1,11 @@
 package hcnu.ui;
 
+import hcnu.bean.Flight;
+import hcnu.bll.IFlightService;
+import hcnu.bll.impl.FlightServiceImpl;
+
 import java.util.Scanner;
+import java.util.UUID;
 
 public class MainUI {
     public static void main(String[] args) {
@@ -15,7 +20,22 @@ public class MainUI {
             System.out.println("按6，退出系统");
             int choice=sc.nextInt();
             if(choice==1){
-
+                String id= UUID.randomUUID().toString();
+                System.out.println("请输入航班机号：");
+                String flightId=sc.next();
+                System.out.println("请输入机型号:");
+                String planeType=sc.next();
+                System.out.println("请输入座位号：");
+                int currentSeatsNum=sc.nextInt();
+                System.out.println("请输入起飞机场");
+                String departureAirPort=sc.next();
+                System.out.println("请输入目的机场：");
+                String destinationAirPort=sc.next();
+                System.out.println("请输入起飞时间：");
+                String departureTime=sc.next();
+                Flight flight=new Flight(id,flightId,planeType,currentSeatsNum,departureAirPort,destinationAirPort,departureTime);
+                IFlightService iFlightService=new FlightServiceImpl();
+                iFlightService.insertFlight(flight);
             }
         }
     }
