@@ -1,3 +1,5 @@
+package hcnu.bean;
+
 import java.util.Set;
 
 public class Order {
