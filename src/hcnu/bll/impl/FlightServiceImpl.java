@@ -3,14 +3,22 @@ package hcnu.bll.impl;
 import hcnu.bean.Flight;
 import hcnu.bll.IFlightService;
 import hcnu.dao.IFlightDao;
+import hcnu.dao.impl.FlightDaoIml;
 
+import java.sql.SQLException;
 import java.util.Set;
 
 public class FlightServiceImpl implements IFlightService {
 
+    IFlightDao iFlightDao;
+
+    public FlightServiceImpl() {
+        this.iFlightDao=new FlightDaoIml();
+    }
+
     @Override
-    public void insertFlight(Flight flight) {
-        System.out.println(flight);
+    public void insertFlight(Flight flight) throws SQLException {
+        iFlightDao.insertFlight(flight);
     }
 
     @Override

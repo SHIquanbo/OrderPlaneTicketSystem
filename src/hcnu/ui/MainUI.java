@@ -4,11 +4,12 @@ import hcnu.bean.Flight;
 import hcnu.bll.IFlightService;
 import hcnu.bll.impl.FlightServiceImpl;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 import java.util.UUID;
 
 public class MainUI {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Scanner sc=new Scanner(System.in);
         while(true){
             System.out.println("请输入相应的数字进行操作：");
@@ -20,7 +21,7 @@ public class MainUI {
             System.out.println("按6，退出系统");
             int choice=sc.nextInt();
             if(choice==1){
-                String id= UUID.randomUUID().toString();
+                String id= UUID.randomUUID().toString().replace("-","");
                 System.out.println("请输入航班机号：");
                 String flightId=sc.next();
                 System.out.println("请输入机型号:");
